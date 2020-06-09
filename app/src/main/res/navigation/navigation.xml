@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home_board_fragment">
+    <fragment
+        android:id="@+id/home_board_fragment"
+        android:name="com.simo.smheaterdemo.HomeBoardFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_board_fragment_to_search_fragment"
+            app:destination="@id/search_fragment"
+            app:popUpTo="@id/home_board_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.simo.smheaterdemo.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_fragment_to_connectedFragment"
+            app:destination="@id/connectedFragment"
+            app:popUpTo="@id/search_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/connectedFragment"
+        android:name="com.simo.smheaterdemo.ConnectedFragment"
+        android:label="ConnectedFragment"
+        tools:layout="@layout/fragment_connected"/>
+</navigation>

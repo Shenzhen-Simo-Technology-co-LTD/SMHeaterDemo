@@ -1,0 +1,3 @@
+//include ':SMHeaterSDK'
+include ':app'
+rootProject.name = "SMHeaterDemo"

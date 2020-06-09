@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ConnectedFragment"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Current Temperature:"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/current_temperature_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            tools:text="- -"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Target Temperature:"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/target_temperature_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="45sp"
+            tools:text="- -"
+            />
+
+        <SeekBar
+            android:id="@+id/seek_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:foregroundTint="#FF5722"
+            android:indeterminateTint="#FF5722"
+            tools:max="56"
+            tools:progress="40"
+            android:paddingStart="64dp"
+            android:paddingEnd="64dp"
+            android:progressBackgroundTint="#88FF5722"
+            android:progressTint="#FF5722"
+            android:thumbTint="#FF5722"
+            tools:ignore="UnusedAttribute" />
+
+    </LinearLayout>
+</layout>
