@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'androidx.navigation.safeargs'
 
 android {
     compileSdkVersion 29
@@ -32,6 +33,10 @@ android {
 
     dataBinding{
         enabled = true
+    }
+
+    repositories {
+        maven { url "https://raw.githubusercontent.com/Shenzhen-Simo-Technology-co-LTD/SMHeaterDemo/master" }
     }
 }
 
