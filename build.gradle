@@ -18,6 +18,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url "file:///Users/languilin/WorkSpace/Compony/OnGithub/SMHeaterSDK-Android/build" }
     }
 }
 

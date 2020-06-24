@@ -1,5 +1,7 @@
 # Introduce
 
+![Platform-Android](https://img.shields.io/badge/Platform-Android-blue.svg) ![SupportAPI](https://img.shields.io/badge/API-23+-green.svg) ![SupportAPI](https://img.shields.io/badge/Android-6.0+-orange.svg) ![Language](https://img.shields.io/badge/Language-Kotlin-sky.svg)
+
 A Android SDK and Demo to Control SIMO Heater via BLE.
 
 ![Demo](demo.gif)

@@ -17,26 +17,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Current Temperature:"
-            android:textSize="30sp"/>
+            android:textSize="@dimen/title_size"/>
         <TextView
             android:id="@+id/current_temperature_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="45sp"
+            android:textSize="@dimen/value_size"
             tools:text="- -"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Target Temperature:"
-            android:textSize="30sp"/>
+            android:textSize="@dimen/title_size"/>
         <TextView
             android:id="@+id/target_temperature_label"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="45sp"
+            android:textSize="@dimen/value_size"
             tools:text="- -"
             />
 
@@ -55,5 +55,104 @@
             android:thumbTint="#FF5722"
             tools:ignore="UnusedAttribute" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Is Heating:"
+            android:textSize="@dimen/title_size"/>
+
+        <TextView
+            android:id="@+id/is_heating_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="@dimen/value_size"
+            tools:text="- -"
+            />
+        <Switch
+            android:id="@+id/switch_heating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="12dp"
+            style="@style/MySwitch"
+            android:thumbTint="@color/colorPrimary"
+            android:textSize="@dimen/title_size"
+            android:switchMinWidth="55dp"
+            android:checked="true"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:text="NTC: "
+                android:textSize="@dimen/title_size"/>
+            <TextView
+                android:id="@+id/ntc_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="@dimen/title_size"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:text="QC: "
+                android:textSize="@dimen/title_size"/>
+            <TextView
+                android:id="@+id/qc_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="@dimen/title_size"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:text="PWM: "
+                android:textSize="@dimen/title_size"/>
+            <TextView
+                android:id="@+id/pwm_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="@dimen/title_size"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="32dp"
+                android:text="Input Voltage(mV): "
+                android:textSize="@dimen/title_size"/>
+            <TextView
+                android:id="@+id/voltage_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="--"
+                android:textSize="@dimen/title_size"/>
+        </LinearLayout>
     </LinearLayout>
 </layout>

@@ -1,5 +1,6 @@
 package com.simo.smheaterdemo
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Build
@@ -16,6 +17,7 @@ import com.simo.smheatersdk.*
 import timber.log.Timber
 
 class ConnectedFragment : DemoBaseFragment(), SMHeaterDelegate {
+    var deviceReady = false
 
     lateinit var binding: FragmentConnectedBinding
     override fun onCreateView(
@@ -48,12 +50,23 @@ class ConnectedFragment : DemoBaseFragment(), SMHeaterDelegate {
                     }
                 }
             })
+
+            switchHeating.setOnCheckedChangeListener { buttonView, isChecked ->
+                SMBLEManager.instance.currentDevice?.setHeatOnOff(isChecked)
+            }
         }
+
+        SMBLEManager.instance.currentDevice?.setHeatOnOff(true)
+        showLoadingHUD()
+//        CoroutineScope(Dispatchers.Main).launch {
+//            delay(1500)
+//            hideHUD()
+//        }
     }
 
     var currentTemperature: Int = 0
         set(value) {
-            if (value < minTemperature) {
+            if (value < 0) {
                 binding.currentTemperatureLabel.text = "- -"
             } else {
                 binding.currentTemperatureLabel.text = "${value} ℃"
@@ -114,13 +127,35 @@ class ConnectedFragment : DemoBaseFragment(), SMHeaterDelegate {
         findNavController().navigateUp()
     }
 
+    @SuppressLint("SetTextI18n")
     override fun deviceStatusDidChanged(device: SMHeater) {
-        if (device.targetTemperature != 0) {
-            _targetTemperature = device.targetTemperature
-            binding.seekBar.progress = device.targetTemperature - minTemperature
+        if (!deviceReady) {
+            deviceReady = true
+            hideHUD()
         }
-        if (device.currentTemperature != 0) {
-            currentTemperature = device.currentTemperature
+
+        binding.switchHeating.isChecked = device.isHeating
+        if (device.isHeating) {
+            binding.isHeatingLabel.text = "True"
+            if (device.targetTemperature != 0) {
+                _targetTemperature = device.targetTemperature
+                binding.seekBar.progress = device.targetTemperature - minTemperature
+            }
+            if (device.currentTemperature != 0) {
+                currentTemperature = device.currentTemperature
+            }
+        }else {
+            binding.isHeatingLabel.text = "False"
+            currentTemperature = -1
+            _targetTemperature = -1
+            binding.seekBar.progress = 0
+        }
+
+        binding.apply {
+            ntcLabel.text = device.ntcState.toString()
+            qcLabel.text = device.qcState.toString()
+            pwmLabel.text = device.pwmState.toString()
+            voltageLabel.text = device.inputMilVoltage.toString() + " mV"
         }
     }
 
