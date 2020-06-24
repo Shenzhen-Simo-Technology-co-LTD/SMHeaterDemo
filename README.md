@@ -43,7 +43,17 @@ android {
 
 ```
 dependencies {
-	implementation 'com.simo:SMHeaterSDK:0.0.1'
+	implementation 'com.simo:SMHeaterSDK:0.0.2'
 	...
 }
 ```
+
+## Log
+
+### 0.0.2
+- Support auto-reconnet, Add `fun didStartReconnect` in `SMHeaterDelegate`
+- Add more device infomations in `SMHeater`
+- Support the latest Hardware version.
+
+### 0.0.1
+- Support the oldest Hardware version.

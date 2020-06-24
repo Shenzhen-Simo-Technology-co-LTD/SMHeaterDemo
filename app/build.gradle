@@ -73,7 +73,7 @@ dependencies {
     // Remote Lib
     implementation 'com.simo:SMHeaterSDK:0.0.2'
 
-    testImplementation 'junit:junit:4.13gi'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
