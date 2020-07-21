@@ -161,7 +161,8 @@ class ConnectedFragment : DemoBaseFragment(), SMHeaterDelegate {
 
     override fun didStartReconnect(device: SMHeater) {
         showLoadingHUD("Reconnecting...") {
-//            SMBLEManager.instance.
+            SMBLEManager.instance.cancelConnectDevice()
+            findNavController().navigateUp()
         }
     }
 }
