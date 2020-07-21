@@ -19,14 +19,16 @@ abstract class DemoBaseFragment: Fragment() {
     var hud: KProgressHUD? = null
     private var hudStyle: KProgressHUD.Style = KProgressHUD.Style.SPIN_INDETERMINATE
     private var delayJob: Job? = null
-    fun showLoadingHUD(text: String = "Loading") {
+    fun showLoadingHUD(text: String = "Loading", didCancel:(()->Unit)? = null) {
         hideHUD()
         hudStyle = KProgressHUD.Style.SPIN_INDETERMINATE
         hud = KProgressHUD.create(activity)
             .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
             .setLabel(text)
 //                    .setDetailsLabel("Downloading data")
-            .setCancellable(true)
+            .setCancellable {
+                didCancel?.invoke()
+            }
             .setAnimationSpeed(2)
             .setDimAmount(0.5f)
             .show()

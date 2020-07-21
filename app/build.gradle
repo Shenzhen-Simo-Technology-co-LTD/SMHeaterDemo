@@ -71,7 +71,7 @@ dependencies {
     // Local Lib
 //    implementation project(':SMHeaterSDK')
     // Remote Lib
-    implementation 'com.simo:SMHeaterSDK:0.0.2'
+    implementation 'com.simo:SMHeaterSDK:0.0.4'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
